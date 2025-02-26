@@ -1,0 +1,12 @@
+/.venv
+/MapsFormated.xlsx
+/MapsFormated_char_scan_results.csv
+/MapsFormated_char_scan_results_20250226_171708.csv
+/MapsFormated_findings_report.txt
+/MapsFormated_findings_report_20250226_171708.txt
+/results_custom.txt
+MapsFormated*
+*.csv
+*.xlsx
+/build
+/dist
