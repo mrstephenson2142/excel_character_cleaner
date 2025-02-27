@@ -1,56 +1,5 @@
 **FYSA: Made with AI**
 
-## Output Files
-
-The script generates several output files with timestamps in their names to ensure uniqueness:
-
-1. **CSV Results** (`filename_char_scan_results_YYYYMMDD_HHMMSS.csv`): 
-   - Technical format with all data in columns
-   - Useful for filtering and further analysis
-
-2. **Text Report** (`filename_findings_report_YYYYMMDD_HHMMSS.txt`): 
-   - User-friendly format, identical to console output
-   - Perfect for sharing with less technical colleagues
-   - Includes character positions and visual context
-   
-3. When cleaning is performed:
-   - **Cleaned Excel File** (`filename_cleaned_YYYYMMDD_HHMMSS.xlsx`)
-   - **Cleaning Log** (`filename_cleaning_log_YYYYMMDD_HHMMSS.txt`)## Cleaning Mode
-
-The tool offers an interactive cleaning mode to fix problematic characters:
-
-```bash
-Would you like to clean the problematic characters?
-This will create a new copy of the Excel file with the problematic characters handled.
-Clean the file? (y/n): y
-```
-
-If you choose to clean the file, for each problematic character you'll be presented with options:
-
-```
-Cleaning cell Sheet1!C4
-Current value: John Doe's Café
-Problematic character: 0x81
-Character: Non-printable - Unicode category: Cc (UNDEFINED)
-
-Options:
-1. Delete the character
-2. Replace with custom text
-3. Skip this cell
-4. Skip all remaining cells
-5. Delete ALL instances of this character in ALL cells
-6. Replace ALL instances of this character in ALL cells
-7. Delete ALL problematic characters (all types) in ALL cells
-8. Replace ALL problematic characters (all types) in ALL cells
-Choose an option (1-4): 
-```
-
-The tool will create:
-1. A cleaned Excel file (`filename_cleaned.xlsx`)
-2. A detailed log of all changes made (`filename_cleaning_log.txt`)# Excel Problematic Character Scanner
-
-A Python utility for scanning Excel files to identify and locate problematic characters like `\x81` that can cause encoding issues.
-
 ## Overview
 
 This tool helps identify problematic non-standard characters in Excel files that might cause issues when processing data. It reports the exact location (sheet, row, column) of each problematic character, as well as the specific position within the cell content, making it easy to find and fix these issues in your data. 
@@ -131,6 +80,57 @@ python excel_char_scanner.py customer_data.xlsx \x81
 # Output will show all occurrences of \x81 in the file
 # and save results to customer_data_char_scan_results.csv
 ```
+## Output Files
+
+The script generates several output files with timestamps in their names to ensure uniqueness:
+
+1. **CSV Results** (`filename_char_scan_results_YYYYMMDD_HHMMSS.csv`): 
+   - Technical format with all data in columns
+   - Useful for filtering and further analysis
+
+2. **Text Report** (`filename_findings_report_YYYYMMDD_HHMMSS.txt`): 
+   - User-friendly format, identical to console output
+   - Perfect for sharing with less technical colleagues
+   - Includes character positions and visual context
+   
+3. When cleaning is performed:
+   - **Cleaned Excel File** (`filename_cleaned_YYYYMMDD_HHMMSS.xlsx`)
+   - **Cleaning Log** (`filename_cleaning_log_YYYYMMDD_HHMMSS.txt`)## Cleaning Mode
+
+The tool offers an interactive cleaning mode to fix problematic characters:
+
+```bash
+Would you like to clean the problematic characters?
+This will create a new copy of the Excel file with the problematic characters handled.
+Clean the file? (y/n): y
+```
+
+If you choose to clean the file, for each problematic character you'll be presented with options:
+
+```
+Cleaning cell Sheet1!C4
+Current value: John Doe's Café
+Problematic character: 0x81
+Character: Non-printable - Unicode category: Cc (UNDEFINED)
+
+Options:
+1. Delete the character
+2. Replace with custom text
+3. Skip this cell
+4. Skip all remaining cells
+5. Delete ALL instances of this character in ALL cells
+6. Replace ALL instances of this character in ALL cells
+7. Delete ALL problematic characters (all types) in ALL cells
+8. Replace ALL problematic characters (all types) in ALL cells
+Choose an option (1-4): 
+```
+
+The tool will create:
+1. A cleaned Excel file (`filename_cleaned.xlsx`)
+2. A detailed log of all changes made (`filename_cleaning_log.txt`)# Excel Problematic Character Scanner
+
+A Python utility for scanning Excel files to identify and locate problematic characters like `\x81` that can cause encoding issues.
+
 
 ## Troubleshooting
 
