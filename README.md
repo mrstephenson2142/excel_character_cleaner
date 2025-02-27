@@ -1,3 +1,5 @@
+**FYSA: Made with AI**
+
 ## Output Files
 
 The script generates several output files with timestamps in their names to ensure uniqueness:
