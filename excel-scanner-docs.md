@@ -1,3 +1,5 @@
+# Made with AI
+
 # Excel Problematic Character Scanner
 
 A Python utility for scanning Excel files to identify and locate problematic characters like `\x81` that can cause encoding issues.
